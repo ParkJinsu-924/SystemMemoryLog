@@ -63,5 +63,7 @@
         
         myLog.Print();
         
+        myLog.ReleaseLog();
+        
         return 0;
     }
