@@ -16,7 +16,7 @@
     * int extraParamCount : 로그를 남길 여분의 정수값의 개수입니다. 해당 코드지점에서 확인하고 싶은 변수들의 값들을 여기서 설정한 개수만큼 저장할 수 있습니다. 모든 지점에 지정한 개수만큼 값이 들어가야합니다.
     * ... : 가변인자로 const WCHAR* 문자열 포인터가 들어갑니다. sizeOfLog에서 지정한 개수만큼 문자열들을 넣으면 됩니다. 이 문자열은 선언한 열거형과 같은 이름(혹은, 비슷한 이름), 같은 순서로 넣어야합니다.
     
-4. 콘솔출력 혹은 파일출력 함수를 선언 및 정의합니다. SetLogOption에 매개변수로 넣은 문자열들은 logTypeArray 2차원 배열에 순차적으로 저장되어 있습니다. 로그로 남긴 문자열들의 인덱스는 logIdxArray에 저장되어 있습니다. 최신의 인덱스는 currentIndex를 참조하면됩니다. currentIndex % maxCount + 1 로 접근하세요.
+4. 콘솔출력 혹은 파일출력 함수를 선언 및 정의합니다. SetLogOption에 매개변수로 넣은 문자열들은 logTypeArray 2차원 배열에 순차적으로 저장되어 있습니다. 로그로 남긴 문자열들의 인덱스는 logIdxArray에 저장되어 있습니다. 최신의 인덱스는 currentIndex를 참조하면됩니다. currentIndex % maxCount 로 접근하세요.
 5. AddLog()함수를 통해 로그를 추가합니다.
 
       ### ```AddLog(int log, ...);```
