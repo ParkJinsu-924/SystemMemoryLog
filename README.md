@@ -8,7 +8,9 @@
 2. 상속을 받은 클래스에서 열거형을 선언합니다. 열거형의 갯수는 본인이 남기고싶은 로그 종류의 개수만큼 선언합니다. 처음 시작값은 0 이여야합니다.
 3. SetLogOption()함수를 통해 로그 옵션을 설정합니다.
 
-      ### ```SetLogOption(int sizeOfLog, int maxCount, int extraParamCount, ...);```
+     ``` C
+     SetLogOption(int sizeOfLog, int maxCount, int extraParamCount, ...);
+     ```
     
     각 매개변수의 의미는 다음과 같습니다.
     * int sizeOfLog : 로그의 종류 개수입니다.
@@ -19,7 +21,9 @@
 4. 콘솔출력 혹은 파일출력 함수를 선언 및 정의합니다. SetLogOption에 매개변수로 넣은 문자열들은 logTypeArray 2차원 배열에 순차적으로 저장되어 있습니다. 로그로 남긴 문자열들의 인덱스는 logIdxArray에 저장되어 있습니다. 최신의 인덱스는 currentIndex를 참조하면됩니다. currentIndex % maxCount 로 접근하세요.
 5. AddLog()함수를 통해 로그를 추가합니다.
 
-      ### ```AddLog(int log, ...);```
+      ``` C
+      AddLog(int log, ...);
+      ```
       
      각 매개변수의 의미는 다음과 같습니다.
      * int log : 로그의 종류입니다.
@@ -28,7 +32,9 @@
 6. 로그수집이 완료되었다면, 직접 정의한 출력함수를 호출합니다.
 7. 로그수집에 사용되었던 메모리들을 해제하려면 ReleaseLog()를 호출하세요.
 
-      ### ```ReleaseLog();```
+      ``` C
+      ReleaseLog();
+      ```
       
 ## 사용 예
     class MyLogClass : public CSystemMemoryLog
