@@ -59,6 +59,8 @@ public:
 			vl += strlen(vl) + 2;
 		}
 
+		va_end(vl);
+
 		//최대크기만큼 로그 미리 할당
 		this->maxCount = maxCount;
 		logIdxArray = new int[maxCount];
@@ -78,7 +80,7 @@ public:
 	{
 		UINT64 index = InterlockedIncrement64((LONG64*)&currentIndex) % maxCount;
 
-		//진짜로그넣기
+		//로그넣기
 		logIdxArray[index] = log;
 
 		va_list vl;
